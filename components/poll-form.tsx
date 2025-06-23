@@ -6,6 +6,7 @@ import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Card, CardContent } from "@/components/ui/card"
 import { usePollContext } from "@/context/poll-context"
+import { Textarea } from "./ui/textarea"
 
 export default function PollForm() {
   const { addPoll } = usePollContext()
@@ -32,14 +33,15 @@ export default function PollForm() {
       <CardContent className="pt-6">
         <form onSubmit={handleSubmit} className="space-y-4">
           <div className="space-y-2">
-            <Input
+            <Textarea
               placeholder="Enter your question..."
               value={question}
               onChange={(e) => {
                 setQuestion(e.target.value)
                 if (e.target.value.trim()) setError("")
               }}
-              className={error ? "border-red-500" : ""}
+              className={`${error ? "border-red-500" : ""} text-xl font-semibold leading-loose`}
+              rows={3}
             />
             {error && <p className="text-sm text-red-500">{error}</p>}
           </div>
