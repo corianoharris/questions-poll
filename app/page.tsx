@@ -55,7 +55,7 @@ export default function PollApp() {
                 </div>
               )}
             </div>
-            <div className="flex gap-4 flex-wrap justify-center items-center">
+            <div className="flex gap-4 flex-wrap items-center justify-center">
               <Button
                 variant="outline"
                 size="sm"
